@@ -5,6 +5,12 @@
 
 Example project and proof of concept for a personal [serverless](https://serverless.com) *Google Analytics* clone to track website visitors. You can read more about [Serverless Analytics with Amazon Kinesis and AWS Lambda](https://sbstjn.com/serverless-analytics-with-kinesis-stream-lambda.html) on [sbstjn.com](https://sbstjn.com) …
 
+## 修改
+
+diff/process.js内部修正了时间从服务器取，支持了东八区，增加了千年统计
+
+下一步需要支持node10版本
+
 ## Components
 
 After deploying the service you will have an HTTP endpoint using Amazon API Gateway that accepts requests and puts them into a Kinesis Stream. A Lambda function processes the stream and writes basic metrics about how many visitors you have per absolute URL to DynamoDB. 
